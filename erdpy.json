@@ -1,0 +1,29 @@
+{
+    "configurations": {
+        "default": {
+            "proxy": "https://devnet-api.elrond.com",
+            "chainID": "D"
+        }
+    },
+    "contract":{
+        "deploy":{
+            "verbose": true,
+            "bytecode": "output/staking.wasm",
+            "recall-nonce": true,
+            "pem": "../wallet.pem",
+            "gas-limit": 60000000,
+            "arguments": [
+                "str:EFOO-8e80a5", 
+                "1000000000000000000",
+                "str:HAHAHA-5c4481",
+                "25",
+                "259200"
+            ],
+            "send": true,
+            "outfile": "SC.json",
+            "metadata-payable": true
+        }
+     }
+}
+
+

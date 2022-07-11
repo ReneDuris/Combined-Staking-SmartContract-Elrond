@@ -1,0 +1,11 @@
+/home/shield/Aerovek/rust/staking/meta/target/debug/deps/sha3-7a13e1ffa6da1fed.rmeta: /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/lib.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/paddings.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/macros.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/reader.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/state.rs
+
+/home/shield/Aerovek/rust/staking/meta/target/debug/deps/libsha3-7a13e1ffa6da1fed.rlib: /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/lib.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/paddings.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/macros.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/reader.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/state.rs
+
+/home/shield/Aerovek/rust/staking/meta/target/debug/deps/sha3-7a13e1ffa6da1fed.d: /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/lib.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/paddings.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/macros.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/reader.rs /home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/state.rs
+
+/home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/lib.rs:
+/home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/paddings.rs:
+/home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/macros.rs:
+/home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/reader.rs:
+/home/shield/elrondsdk/vendor-rust/registry/src/github.com-1ecc6299db9ec823/sha3-0.9.1/src/state.rs:

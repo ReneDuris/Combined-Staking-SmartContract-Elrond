@@ -1,0 +1,18 @@
+[package]
+name = "staking"
+version = "1.0.0"
+authors = [ "Rene Ďuriš",]
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/staking.rs"
+
+[dev-dependencies]
+num-bigint = "0.4.2"
+
+[dependencies.elrond-wasm]
+version = "0.33.1"
+
+[dev-dependencies.elrond-wasm-debug]
+version = "0.33.1"
