@@ -1,2 +1,0 @@
-cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/shield/Aerovek/rust/dao/target/debug/build/typenum-3044c2e084bcf4e7/out/consts.rs
-cargo:rustc-env=TYPENUM_BUILD_OP=/home/shield/Aerovek/rust/dao/target/debug/build/typenum-3044c2e084bcf4e7/out/op.rs
