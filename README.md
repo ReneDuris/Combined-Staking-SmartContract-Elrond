@@ -29,7 +29,7 @@ erdpy contract deploy
 # Upgrading smartcontract
 example:
 ```
-erdpy --verbose contract upgrade erd1qqqqqqqqqqqqqpgq6lsfc55vs5yk56mrnd5s95jgm9lrevvs0ztsrkernq --recall-nonce --pem="wallet.pem" --gas-limit=60000000 --proxy="https://devnet-gateway.elrond.com" --chain=D --project=staking --arguments str:EFOO-8e80a5 100000000000000000 str:HAHAHA-5c4481 25 259200 --send || return
+erdpy --verbose contract upgrade erd1qqqqqqqqqqqqqpgq6lsfc55vs5yk56mrnd5s95jgm9lrevvs0ztsrkernq --recall-nonce --pem="wallet.pem" --gas-limit=60000000 --proxy="https://devnet-gateway.elrond.com" --chain=D --project=staking --arguments str:EFOO-8e80a5 100000000000000000 str:HAHAHA-5c4481 25 1 259200 --send || return
 ```
 # Arguments upon deployement
 Upon deployement or while ugrading you have to set your arguments.
@@ -48,6 +48,10 @@ Upon deployement or while ugrading you have to set your arguments.
 - APR
 ```
 "25"
+```
+- NFT boost multiplier
+```
+"1"
 ```
 - Lock time for ESDT unstake in seconds
 ```
