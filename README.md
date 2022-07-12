@@ -163,7 +163,7 @@ let balance_smartcontract = &self.blockchain().get_sc_balance(&staking_token,0)
         let staked_amount = staked_amount_mapper.get();
         let apr_boost = self.staked_nft(&caller).len();
         let apr_boost_u32 = apr_boost as u32;
-        let real_apr = self.apr_normal().get() + apr_boost_u32;
+        let real_apr =apr_boost_u32 * self.nft_boost_multiplier().get() + self.apr_normal().get();
         
         let rewards: BigUint = ((BigUint::from(difference_timestamp) * BigUint::from(real_apr) *staked_amount)/BigUint::from(YEAR_IN_SECONDS))/BigUint::from(PERCENTAGE);
         
