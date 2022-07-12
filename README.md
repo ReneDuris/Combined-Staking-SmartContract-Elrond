@@ -82,6 +82,13 @@ Upon deployement or while ugrading you have to set your arguments.
         self.lock_assets_time_in_seconds().set(lock_assets_time_in_seconds);
     }
 ```        
+# Simulating contract call || mandos tests
+- [Mandos tests](https://docs.elrond.com/developers/mandos-reference/structure/#docsNav)
+- erdpy --verbose contract call
+example
+```
+erdpy --verbose contract call erd1qqqqqqqqqqqqqpgq6lsfc55vs5yk56mrnd5s95jgm9lrevvs0ztsrkernq --function=ESDTTransfer --pem="wallet.pem" --proxy="https://devnet-gateway.elrond.com" --chain=D --recall-nonce --gas-limit=5000000 --arguments str:EFOO-8e80a5 1000000000000000000 str:stake --simulate
+```
 # Query SmartContract
 Using view methods you are able to query your smartcontract to view informations.
 - [query SmartContract-erdjs](https://github.com/ReneDuris/Query-SmartContract-erdjs)
