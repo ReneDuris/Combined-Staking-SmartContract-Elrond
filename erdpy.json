@@ -22,7 +22,7 @@
             ],
             "send": true,
             "outfile": "SC.json",
-            "metadata-payable": true
+            "metadata-payable": false
         }
      }
 }
