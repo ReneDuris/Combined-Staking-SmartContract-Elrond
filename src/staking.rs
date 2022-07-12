@@ -5,6 +5,7 @@ elrond_wasm::derive_imports!();
 const YEAR_IN_SECONDS: u64 = 60 * 60 * 24 * 365;
 const PERCENTAGE: u32 = 100;
 const NFT: u32 = 1;
+
 #[elrond_wasm::contract]
 
 pub trait Staking{
@@ -15,16 +16,20 @@ pub trait Staking{
         staking_amount: &BigUint,
         token_id: &TokenIdentifier,
         apr_normal: &u32,
+        nft_boost_multiplier: &u32,
         lock_assets_time_in_seconds: &u64
+        
     ) {
         
         require!(staking_amount > &0 ,"Staking amount cannot be 0");
         require!(apr_normal > &0 ,"APR cannot be 0");
+        require!(nft_boost_multiplier > &0 ,"Multiplier cannot be 0");
 
         self.staking_token().set(staking_token);
         self.required_stake_amount().set(staking_amount);
         self.nft_token().set(token_id);
         self.apr_normal().set(apr_normal);
+        self.nft_boost_multiplier().set(nft_boost_multiplier);
         self.lock_assets_time_in_seconds().set(lock_assets_time_in_seconds);
     }
     #[payable("*")]
@@ -148,6 +153,9 @@ pub trait Staking{
     #[storage_mapper("aprNormal")]
     fn apr_normal(&self) -> SingleValueMapper<u32>;
 
+    #[storage_mapper("nftBoostMultiplier")]
+    fn nft_boost_multiplier(&self) -> SingleValueMapper<u32>;
+
     #[storage_mapper("lockAssetsTimeInSeconds")]
     fn lock_assets_time_in_seconds(&self) -> SingleValueMapper<u64>;
 
@@ -181,7 +189,7 @@ pub trait Staking{
         let staked_amount = staked_amount_mapper.get();
         let apr_boost = self.staked_nft(&caller).len();
         let apr_boost_u32 = apr_boost as u32;
-        let real_apr = self.apr_normal().get() + apr_boost_u32;
+        let real_apr =apr_boost_u32 * self.nft_boost_multiplier().get() + self.apr_normal().get();
         
         let rewards: BigUint = ((BigUint::from(difference_timestamp) * BigUint::from(real_apr) *staked_amount)/BigUint::from(YEAR_IN_SECONDS))/BigUint::from(PERCENTAGE);
         

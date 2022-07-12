@@ -9,7 +9,8 @@
         },
         "contractCrate": {
             "name": "staking",
-            "version": "1.0.0"
+            "version": "1.0.0",
+            "git_version": "58576b7-modified"
         },
         "framework": {
             "name": "elrond-wasm",
@@ -33,6 +34,10 @@
             },
             {
                 "name": "apr_normal",
+                "type": "u32"
+            },
+            {
+                "name": "nft_boost_multiplier",
                 "type": "u32"
             },
             {
