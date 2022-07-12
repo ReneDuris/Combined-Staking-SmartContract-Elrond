@@ -58,23 +58,27 @@ Upon deployement or while ugrading you have to set your arguments.
 "259200"
 ```
 ```
- #[init]
+  #[init]
     fn init(
         &self,
         staking_token: &EgldOrEsdtTokenIdentifier,
         staking_amount: &BigUint,
         token_id: &TokenIdentifier,
         apr_normal: &u32,
+        nft_boost_multiplier: &u32,
         lock_assets_time_in_seconds: &u64
+        
     ) {
         
         require!(staking_amount > &0 ,"Staking amount cannot be 0");
         require!(apr_normal > &0 ,"APR cannot be 0");
+        require!(nft_boost_multiplier > &0 ,"Multiplier cannot be 0");
 
         self.staking_token().set(staking_token);
         self.required_stake_amount().set(staking_amount);
         self.nft_token().set(token_id);
         self.apr_normal().set(apr_normal);
+        self.nft_boost_multiplier().set(nft_boost_multiplier);
         self.lock_assets_time_in_seconds().set(lock_assets_time_in_seconds);
     }
 ```        
