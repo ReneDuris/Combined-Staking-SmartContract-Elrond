@@ -52,7 +52,7 @@ pub trait Staking{
         require!(self.reward_supply().get() < withdraw_amount, "You cant withdraw more than you supplied");
         self.reward_supply()
         .update(|supplied| *supplied -= &withdraw_amount);
-        self.send().direct(&caller, &staking_token, 0, &unstake_amount);
+        self.send().direct(&caller, &staking_token, 0, &withdraw_amount);
     }
 
     #[payable("*")]
