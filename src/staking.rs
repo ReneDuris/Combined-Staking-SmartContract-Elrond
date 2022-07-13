@@ -39,20 +39,19 @@ pub trait Staking{
         let staking_token = self.staking_token().get();
         let (payment_token, payment_amount) = self.call_value().egld_or_single_fungible_esdt();
         require!(payment_token == staking_token, "Invalid token input");
-        self.reward_supply().update(|staked| *staked += &payment_amount);
+        self.reward_supply().update(|supplied| *supplied += &payment_amount);
 
     }
 
-    #[payable("*")]
     #[only_owner]
     #[endpoint]
-    fn withdrawsupply(&self,unstake_amount: BigUint){
+    fn withdrawsupply(&self,withdraw_amount: BigUint){
         let caller = self.blockchain().get_caller();
         let staking_token = self.staking_token().get();
         
-        require!(self.reward_supply().get() < unstake_amount, "You cant withdraw more than you supplied");
+        require!(self.reward_supply().get() < withdraw_amount, "You cant withdraw more than you supplied");
         self.reward_supply()
-        .update(|staked| *staked -= &unstake_amount);
+        .update(|supplied| *supplied -= &withdraw_amount);
         self.send().direct(&caller, &staking_token, 0, &unstake_amount);
     }
 
