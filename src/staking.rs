@@ -34,7 +34,7 @@ pub trait Staking{
     }
     #[payable("*")]
     #[only_owner]
-    #[endpoint]
+    #[endpoint(supply)]
     fn supply(&self){
         let staking_token = self.staking_token().get();
         let (payment_token, payment_amount) = self.call_value().egld_or_single_fungible_esdt();
@@ -44,7 +44,7 @@ pub trait Staking{
     }
 
     #[only_owner]
-    #[endpoint]
+    #[endpoint(withdrawsupply)]
     fn withdrawsupply(&self,withdraw_amount: BigUint){
         let caller = self.blockchain().get_caller();
         let staking_token = self.staking_token().get();
@@ -56,7 +56,7 @@ pub trait Staking{
     }
 
     #[payable("*")]
-    #[endpoint]
+    #[endpoint(stake)]
     fn stake(&self) {
         self.claim_rewards_to_storage();
         let caller = self.blockchain().get_caller();
@@ -75,7 +75,7 @@ pub trait Staking{
     }
 
     #[payable("*")]
-    #[endpoint]
+    #[endpoint(stakeboost)]
     fn stakeboost(&self){
         self.claim_rewards_to_storage();
         let caller = self.blockchain().get_caller();
@@ -86,7 +86,7 @@ pub trait Staking{
         self.staked_nft(&caller).insert(payment.token_nonce);
     }
 
-    #[endpoint]
+    #[endpoint(unstakeboost)]
     fn unstakeboost(&self, token_id: TokenIdentifier,nonce: u64) {
         self.claim_rewards_to_storage();
         let caller = self.blockchain().get_caller();
@@ -97,7 +97,7 @@ pub trait Staking{
         self.send().direct_esdt(&caller,&token_id ,nonce, &BigUint::from(NFT));
     }
 
-    #[endpoint]
+    #[endpoint(unstake)]
     fn unstake(&self, unstake_amount: BigUint) {
         let caller = self.blockchain().get_caller();
         let current_timestamp = self.blockchain().get_block_timestamp();
@@ -123,7 +123,7 @@ pub trait Staking{
         self.send().direct(&caller, &staking_token, 0, &unstake_amount);
     }
 
-    #[endpoint]
+    #[endpoint(claim)]
     fn claim(&self){
         let caller = self.blockchain().get_caller();
         let staking_token = self.staking_token().get();
